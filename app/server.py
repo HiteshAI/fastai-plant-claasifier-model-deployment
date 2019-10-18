@@ -61,8 +61,8 @@ learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
 
 species_details = {
-    'acer_platanoides': 'also',
-    # 'acer_platanoides': "also known as Norway maple, used for furniture, flooring and musical instruments. begins flowering in spring. The flowers emerge during April, but in some of the coolest areas of the tree's range they may not appear until June. More : https://en.wikipedia.org/wiki/acer_platanoides",
+    
+    'acer_platanoides': "also known as Norway maple, used for furniture, flooring and musical instruments. begins flowering in spring. The flowers emerge during April, but in some of the coolest areas of the tree's range they may not appear until June. More : https://en.wikipedia.org/wiki/acer_platanoides",
     "acer_saccharinum": "commonly known as silver maple,[4] creek maple, silverleaf maple,[4] soft maple, large maple,[4] water maple,[4] swamp maple,[4] or white maple. seeds are also a food source for squirrels, chipmunks and birds. The bark can be eaten by beaver and deer. produced before the leaves in early spring,[6] with the seeds maturing in early summer. More: https://en.wikipedia.org/wiki/acer_saccharinum",
     "aesculus_flava": "commonly known as the yellow buckeye, common buckeye, or sweet buckeye, is cultivated as an ornamental tree, The flowers are produced in panicles in spring. More - https://en.wikipedia.org/wiki/Aesculus_flava",
     "ailanthus_altissima": "known as tree of heaven, ailanthus, varnish tree. appear from mid-April in the south of its range to July in the north. addition to its use as an ornamental plant, the tree of heaven is also used for its wood and as a host plant to feed silkworms",
@@ -110,7 +110,7 @@ async def analyze(request):
     except:
         value = None
 
-    return JSONResponse({'result': value, 'details': str(value)})
+    return JSONResponse({'result': str(prediction), 'details': str(value)})
 
 
 if __name__ == '__main__':
